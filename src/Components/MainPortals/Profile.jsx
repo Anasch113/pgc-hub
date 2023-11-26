@@ -54,39 +54,8 @@ const [previousPassword, setPreviousPassword] = useState("")
 
   // Function to update password
 
-const handleUpdatePassword = async()=>{
-  try {
-    // Ensure that the user is authenticated
-    if (user) {
-      // Check if the previous password is correct
-      const credential = EmailAuthProvider.credential(user.email, previousPassword);
 
-      try {
-        await reauthenticateWithCredential(user, credential);
-      } catch (reauthError) {
-        alert("Error" + reauthError.message);
-        return;
-      }
-
-      // If the previous password is correct, update the profile and password
-      
-      if (password) {
-        await updatePassword(auth.currentUser, password);
-      }
-
-      // Display a success message
-      alert("Profile and password updated successfully!");
-    } else {
-      // Handle the case where the user is not authenticated
-      alert("User is not authenticated. Please log in.");
-    }
-  } catch (error) {
-    // Handle any errors here
-    alert("An error occurred while updating the profile: " + error.message);
-  }
-  
-}
-
+     
 
   //onChance function on input
   const hanldeChange = (e) => {
