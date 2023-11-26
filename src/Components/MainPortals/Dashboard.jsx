@@ -23,12 +23,7 @@ const Dashboard = () => {
     const articleRef = collection(db, "Articles")
     const q = query(articleRef, orderBy("createdAt", "desc"));
     onSnapshot(q, (snapshot) => {
-      const articles = snapshot.docs.map((doc) => ({
-        id: doc.id,
-        ...doc.data(),
-        
-      }));
-      setArticles(articles);
+    
      
     });
 
@@ -80,7 +75,7 @@ const Dashboard = () => {
                 <div className="db-hed-2">
                   
                 </div>
-                {user && user.uid === userId && (
+               
                   <div className="submit-container-1">
                     <div className="row-db">
                       <div className='row-assignment-box'>
@@ -89,12 +84,7 @@ const Dashboard = () => {
                         <h5> {createdBy}</h5>
                       </div>
                       <div className="main-submit">
-                        <a href={imageUrl} target='_main' className='down-btn'>Download <div className='react-icons'><AiOutlineDownload /></div></a>
-                        <div className="delete-con">
-                        {user && user.uid === userId && (
-                          <Delete id={id} imageUrl={imageUrl}  />
-                        )}
-                        </div>
+                     
                       </div>
                       
                       </div>
