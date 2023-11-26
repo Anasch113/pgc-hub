@@ -13,12 +13,11 @@ import { getDownloadURL, getStorage, ref, uploadBytes } from "firebase/storage";
 
 const  userAuthContext = createContext();
 
-export function UserAuthContextProvider({ children }) {
-  const [user, setUser] = useState({});
+
  
 
   function logIn(email, password) {
-    return signInWithEmailAndPassword(auth, email, password);
+  
   }
   function signUp(email, password) {
     return createUserWithEmailAndPassword(auth, email, password);
@@ -32,7 +31,7 @@ function logOut(){
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentuser) => {
       
-      setUser(currentuser);
+  
     });
 
     return () => {
@@ -49,9 +48,7 @@ function logOut(){
     
      
      const snapshot = await uploadBytes(fileRef, file)
-     const photoURL = await getDownloadURL(fileRef);
-     updateProfile(user, {photoURL});
-     setLoading(false)
+  
      alert("Image uploaded successfully")
    
   }
@@ -59,7 +56,7 @@ function logOut(){
 
   return (
     <userAuthContext.Provider
-      value={{ user, signUp, logIn, logOut, upload, }}
+      value={{ user, signUp, logIn, }}
       
     >
       {children}
