@@ -38,8 +38,7 @@ const [ singleUserId, setSingleUserId] = useState('');
 
   useEffect(() => {
     const articleRef = collection(db, "Articles")
-    const q = query(articleRef, orderBy("createdAt", "desc"));
-    onSnapshot(q, (snapshot) => {
+    
       const articles = snapshot.docs.map((doc) => ({
         id: doc.id,
         ...doc.data(),
@@ -59,13 +58,7 @@ const [ singleUserId, setSingleUserId] = useState('');
     const searchTerm = e.target.value.toLowerCase();
     setSearchVal(searchTerm);
   
-    if (searchTerm === '') {
-      setArticles(searchApiData);
-    } else {
-      const filterResult = searchApiData.filter((item) =>
-        item.createdBy.toLowerCase().includes(searchTerm)
-      );
-     
+    i
 
   
       if (filterResult.length === 0) {
@@ -183,15 +176,7 @@ const [ singleUserId, setSingleUserId] = useState('');
                       </div>
                 <div className="main-submit">
                
-                  <a href={imageUrl} target='_main' className='down-btn'>Download <div className='react-icons'><AiOutlineDownload/></div></a>
-                  <div className="delete-con">
-                    {
-                      user && user.uid === userId &&(
-
-                        <Delete id ={id} imageUrl = {imageUrl}/>
-                      )
-                    }
-
+              
                   </div>
                 </div>
                 </div>
@@ -202,10 +187,7 @@ const [ singleUserId, setSingleUserId] = useState('');
                   <span className='sp-bl'><span className='mc'>Subject:</span>  {description}</span>
                   <span className='sp-bl'><span className='mc'>Topic:</span>  {topic}</span>
                   <span id='date-as'><span className='mc'>Date:</span>{createdAt.toDate().toDateString()}</span>
-                  {/* Link to open single user assignments */}
-             <Link to={`/portal/mainportal/singleuserassignments/${userId}`}> <button  onClick={handleMoreFromUserClick(userId)}
-               className='text-4xl mt-5 '>  <FaExternalLinkAlt /></button></Link>
-               <div className='single-assign-prop'>
+                  {/* Link to open single user assignments */}lassName='single-assign-prop'>
 
                
              
