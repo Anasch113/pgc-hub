@@ -11,12 +11,8 @@ const firebaseConfig = {
   
   apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
 
-  authDomain: "pgc-hub.firebaseapp.com",
-  projectId: "pgc-hub",
-  storageBucket: "pgc-hub.appspot.com",
-  messagingSenderId: "822329903056",
-  appId: "1:822329903056:web:1884a49d938f8ad7e45bd5",
-  measurementId: "G-QENRJMWTDJ"
+// Sensitive Code
+ 
 };
 
 // Initialize Firebase
