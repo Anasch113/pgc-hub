@@ -1,0 +1,27 @@
+.chart-bar{
+   
+    height: 250px;
+    width: 400px;
+    padding: 0px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.chart-bar canvas{
+    
+   background-color: #fff;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.10);
+   border-radius: 10px;
+  padding: 10px 10px;
+  
+}
+@media (max-width: 870px){
+    .chart-bar{
+        height: 180px;
+        width: 290px;
+    }
+    .chart-bar canvas{
+        padding: 7px 8px;
+    }
+}
+

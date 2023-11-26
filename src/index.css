@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@layer utilities {
+    .min-h-custom {
+      min-height: 550px;
+    }
+    .h-custom{
+      height: 430px
+    }
+  }
+  
+@tailwind utilities;
